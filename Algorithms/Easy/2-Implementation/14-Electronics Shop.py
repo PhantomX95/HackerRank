@@ -46,11 +46,9 @@
 
 # Solution:
 import os
-from itertools import product
 
 def getMoneySpent(keyboards, drives, b):
-    combinations = product(keyboards, drives)
-    sums = sorted([k + d for k, d in combinations if k + d <= b])
+    sums = sorted([k + d for k in keyboards for d in drives if k + d <= b])
     
     return sums.pop() if sums else -1
 
