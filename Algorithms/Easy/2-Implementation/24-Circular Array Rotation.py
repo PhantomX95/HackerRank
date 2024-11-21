@@ -53,8 +53,8 @@ import os
 
 def circularArrayRotation(a, k, queries):
     n = len(a)
-    k = k % n
-    rotated = a[-k:] + a[:-k]
+    rotate = k % n
+    rotated = a[-rotate:] + a[:-rotate]
     
     return [rotated[query] for query in queries]
 
